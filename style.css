@@ -28,9 +28,8 @@
 .header-maincontainer {
     /* Proportions */
     display: flex;
-    padding-top: 7px;
     padding-left: 33px;
-    height: 77px;
+    height: 88px;
     width: 100%;
     
     /* Characteristics */
@@ -75,6 +74,7 @@
         color: var(--color-defaultwhite);
         position: relative;
         flex-shrink: 0;
+        padding-top: 7px;
 
         /* Interactivity */
         animation: headerContentSolidify linear both;
@@ -131,14 +131,58 @@
 
 }
 
-/* Header's subpage titles  */
-.header-subpagetitles {
+/* Header's subpage buttons  */
+.header-subpagebuttons {
     /* Characteristics */
-    margin-right: 50px;
+    background-color: rgb(10, 10, 10);
+    height: 88px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-right-width: 0px;
+    border-left-width: 1px;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    border-color: rgb(41, 41, 41);
+    border-style: solid;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: flex;
+    transition: color 0.3s ease-in-out;
+    align-items: center;
+
     /* Visuals */
     font-family: "DM Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;
+    font-size: 20px;
     color: white;
+
+    /*  */
 }
+
+.header-subpagebuttons::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.2s ease-in-out;
+}
+
+.header-subpagebuttons:hover::before {
+    transform: scaleY(1);
+}
+
+.header-subpagebuttons:hover {
+    color: black;
+}
+
