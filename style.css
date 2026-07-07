@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
 * {
     padding: 0%;
@@ -54,9 +54,21 @@
     @keyframes headerBgSolidify {
         from {
             background-color: transparent;
+            border-top-width: 0px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-bottom-width: 0px;
+            border-color: transparent;
+            border-style: none;
         }
         to {
             background-color: white;
+            border-top-width: 0px;
+            border-left-width: 0px;
+            border-right-width: 0px;
+            border-bottom-width: 1px;
+            border-style: solid;
+            border-color: rgb(138, 138, 138);
         }
     }
     /* Header scrolling content solidification keyframe */
@@ -256,7 +268,7 @@
     /* Topsection Title */
     #body-topsectiontitle {
         animation: body-topsectionloadup 0.6s ease-out forwards;
-        font-family: "Old Standard TT", serif;
+        font-family: "Crimson Text", serif;
         font-size: 95px;
         color: white;
     }
@@ -264,7 +276,7 @@
     /* Topsection Subtitle */
     #body-topsectionsubtitle {
         animation: body-topsectionloadup 0.75s ease-out forwards;
-        font-family: 'Old Standard TT', san-serif;
+        font-family: "Crimson Text", serif;
         color: white;
         font-size: 45px;
     }
@@ -288,4 +300,15 @@
     width: 100%;
     height: auto;
     background-color: white;
+    padding-top: 90px;
+    padding-bottom: 90px;
 }
+    /* Second section quote */
+    #body-secondsectionquote {
+        width: 1000px;
+        font-family: "EB Garamond", serif;
+        font-weight: 500;
+        font-size: 55px;
+        text-align: center;
+        line-height: 1.2;
+    }
