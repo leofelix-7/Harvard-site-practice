@@ -10,6 +10,11 @@
     font-family: "DM Sans", san-serif;
 }
 
+::selection {
+    background-color: rgba(0, 0, 0, 0.788);
+    color: rgb(255, 255, 255);
+}
+
 /* Variables */
 :root {
     --color-defaultwhite: white;
@@ -23,7 +28,8 @@
     width: 100%;
     height: auto;
     z-index: -1;
-    filter: brightness(0.4);
+    top: -250px;
+    filter: brightness(0.35);
 }
 
 /* HEADER SECTION START */
@@ -31,7 +37,7 @@
 .header-maincontainer {
     /* Proportions */
     display: flex;
-    padding-left: 33px;
+    padding-left: 36px;
     height: 88px;
     width: 100%;
     
@@ -81,60 +87,31 @@
         }
     }
 
-    /* Main Header Container's childs */
-    #header-schtitle {
-        font-family: "Old Standard TT", serif;
-        font-weight: 700;
-        font-style: normal;
-        font-size: 50px;
-        color: var(--color-defaultwhite);
+    .header-schlogo-wrapper {
         position: relative;
-        flex-shrink: 0;
-        padding-top: 7px;
-
-        /* Interactivity */
-        animation: headerContentSolidify linear both;
-        animation-timeline: scroll(root block);
-        cursor: pointer;
+        width: 215px;
+        height: 52px;
     }
 
-    #header-schtitle::after {
-        content: "";
+    .header-schlogo-black,
+    .header-schlogo-white {
         position: absolute;
+        top: 0;
         left: 0;
-        bottom: 5px;
-        width: 100%;
-        height: 4px;
-        background-color: var(--color-defaultwhite);
-        
-        /* Interactivity */
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.25s ease-in-out;
-        animation: headerTitleUnderlineSolidify linear both;
+        width: auto;
+        height: 55px;
+    }
+
+    .header-schlogo-white {
+        animation: logoFadeOut linear both;
         animation-timeline: scroll(root block);
-    }
-    /* Header scrolling underline solidification keyframe */
-    @keyframes headerTitleUnderlineSolidify {
-        from {
-            background-color: white;
-        }
-        to {
-            background-color: rgba(0, 0, 0, 0.863);
-        }
+        animation-range: 0px 80px;
     }
 
-    /* On hover: grow left-to-right */
-    #header-schtitle:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    @keyframes logoFadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
     }
-
-    /* Stop hover: shrink right-to-left */
-    #header-schtitle:not(:hover)::after {
-    transform-origin: right;
-    }
-
 
 /* Header's subpages container */
 .header-subpagecontainer {
@@ -260,28 +237,30 @@
     flex-direction: column;
     width: 100%;
     padding-top: 88px;
-    align-items: center;
-    justify-content: center;
-    height: 700px;
+    align-items: left;
+    justify-content: left;
+    height: 620px;
     background-color: transparent;
 }
     /* Topsection Title */
     #body-topsectiontitle {
         animation: body-topsectionloadup 0.6s ease-out forwards;
-        font-family: "Old Standard TT", serif;
-        font-size: 95px;
+        font-family: Georgia, serif;
+        font-weight: 400;
+        font-size: 84px;
         color: white;
         flex-shrink: 0;
-        padding-top: 140px;
+        padding-top: 90px;
     }
 
     /* Topsection Subtitle */
     #body-topsectionsubtitle {
         animation: body-topsectionloadup 0.75s ease-out forwards;
-        font-family: "Old Standard TT", serif;
+        font-family: Georgia, serif;
         color: white;
         font-size: 40px;
         flex-shrink: 0;
+        font-weight: 400;
     }
 
     /* Buttons */
@@ -317,6 +296,7 @@
         transform: scaleY(0);
         transform-origin: top;
         transition: transform 0.2s ease-in-out;
+        gap: 20px;
     }
 
     .body-topsectionButtondivBUTTON:hover::before {
@@ -378,3 +358,45 @@
         font-size: 25px;
         font-weight: 500;
     }
+
+/* Section section */
+.body-secondsection {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: white;
+    border-top: 1px;
+    border-color: gray;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+    .body-secondsectionleft {
+        height: 100px;
+        padding: 25px;
+        width: 100%;
+        padding-left: 100px;
+        padding-top: 50px;
+    }
+        #body-secondsectionTitle {
+            font-family: 'EB Garamond', serif;
+            font-weight: 600;
+            font-size: 55px;
+            text-align: left;
+        }
+
+    .body-secondsectionright {
+        height: 100px;
+        width: 100%;
+        padding-right: 100px;
+        padding-top: 50px;
+        justify-content: flex-end;
+        display: flex;
+    }
+        #body-secondsectionParagraph {
+            padding-top: 20px;
+        }

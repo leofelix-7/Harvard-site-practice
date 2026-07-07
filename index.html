@@ -10,13 +10,19 @@
     <title>School Portal</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <img src="./bg-img.webp" class="bg-img" alt="background image for the site">
+                <!-- MAIN BACKGROUND -->
+                <div class="bg-img-wrapper">
+                    <img src="./bg-img.webp" class="bg-img" alt="">
+                </div>
+                <img src="./bg-img.webp" class="bg-img" alt="background image for the site">
     <!--Header-->
         <!-- Main Container -->
         <div class="header-maincontainer">
             <!-- School Title -->
-            <p id="header-schtitle">Robert Mission School</p>
+            <div class="header-schlogo-wrapper">
+                <img src="./black_text_logo.png" class="header-schlogo-black">
+                <img src="./white_text_logo.png" class="header-schlogo-white">
+            </div>
 
             <!-- Subpages container -->
             <div class="header-subpagecontainer">
@@ -33,8 +39,8 @@
     <!-- Header End -->
     <!-- TOP SECTION START -->
     <div class="body-topsection">
-        <h1 id="body-topsectiontitle">Quality Education</h1>
-        <h3 id="body-topsectionsubtitle">For an honest price</h3>
+        <h1 id="body-topsectiontitle">Reshaping education</h1>
+        <h3 id="body-topsectionsubtitle">Inspiring students to learn, thrive and grow through love, friendship and passion</h3>
         <!-- Button division -->
         <div class="body-topsectionButtondiv">
             <a class="body-topsectionButtondivBUTTON" id="applynow" href="">Apply Now</a>
@@ -45,7 +51,14 @@
 
     <!-- Second sections start -->
     <div class="body-secondsection">
-        
+        <!-- Left Section -->
+         <div class="body-secondsectionleft">
+            <h1 id="body-secondsectionTitle">What we teach</h1>
+         </div>
+        <!-- right section -->
+         <div class="body-secondsectionright">
+            <p id="body-secondsectionParagraph">From in-person and private tours, to mobile and virtual options, you can get to know Harvard from anywhere.</p>
+         </div>
     </div>
     <!-- Second section end -->
 
