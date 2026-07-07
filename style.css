@@ -262,23 +262,73 @@
     padding-top: 88px;
     align-items: center;
     justify-content: center;
-    height: 500px;
+    height: 700px;
     background-color: transparent;
 }
     /* Topsection Title */
     #body-topsectiontitle {
         animation: body-topsectionloadup 0.6s ease-out forwards;
-        font-family: "Crimson Text", serif;
+        font-family: "Old Standard TT", serif;
         font-size: 95px;
         color: white;
+        flex-shrink: 0;
+        padding-top: 140px;
     }
 
     /* Topsection Subtitle */
     #body-topsectionsubtitle {
         animation: body-topsectionloadup 0.75s ease-out forwards;
-        font-family: "Crimson Text", serif;
+        font-family: "Old Standard TT", serif;
         color: white;
-        font-size: 45px;
+        font-size: 40px;
+        flex-shrink: 0;
+    }
+
+    /* Buttons */
+    .body-topsectionButtondivBUTTON {
+        background-color: transparent;
+        border-width: 1px;
+        border-style: solid;
+        height: 70px;
+        padding-left: 30px;
+        padding-right: 30px;
+        align-items: center;
+        justify-content: center;
+        border-color: rgb(255, 255, 255);
+        position: relative;
+        display: flex;
+        font-family: 'DM Sans', san-serif;
+        color: white;
+        font-size: 20px;
+        transition: color 0.3s ease-in-out;
+        font-weight: 500;
+        animation: body-topsectionloadup 0.75s ease-out forwards;
+    }
+
+    .body-topsectionButtondivBUTTON::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white !important;
+        z-index: -1;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .body-topsectionButtondivBUTTON:hover::before {
+        transform: scaleY(1);
+    }
+
+    .body-topsectionButtondivBUTTON:hover {
+        color: rgb(0, 0, 0);
+    }
+
+    #learnmore {
+        background-color: transparent;
     }
 
     @keyframes body-topsectionloadup {
@@ -290,6 +340,15 @@
             opacity: 1;
             transform: translateY(0px);
         }
+    }
+    /* Button division */
+    .body-topsectionButtondiv {
+        padding-top: 45px;
+        display: flex;
+        height: 100%;
+        width: auto;
+        flex-direction: row;
+        padding-bottom: 25px;
     }
 /* Second section div */
 .body-secondsection {
@@ -311,4 +370,9 @@
         font-size: 55px;
         text-align: center;
         line-height: 1.2;
+    }
+
+    #body-secondsectionquoteAuthor {
+        font-family: "EB Garamond", serif;
+        font-size: 20px;
     }
