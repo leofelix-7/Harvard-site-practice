@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
 * {
     padding: 0%;
@@ -6,6 +7,7 @@
     text-decoration: none;
     outline-width: 0%;
     box-sizing: border-box;
+    font-family: "DM Sans", san-serif;
 }
 
 /* Variables */
@@ -35,6 +37,7 @@
     
     /* Characteristics */
     position: fixed;
+    z-index: 8;
 
     /* Ingredient Relationships */
     align-items: center;
@@ -95,7 +98,7 @@
         /* Interactivity */
         transform: scaleX(0);
         transform-origin: left;
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.25s ease-in-out;
         animation: headerTitleUnderlineSolidify linear both;
         animation-timeline: scroll(root block);
     }
@@ -238,3 +241,51 @@
         }
     }
 /* HEADER SECTION COMPLETE */
+
+/* Topsection Div */
+.body-topsection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 88px;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-color: transparent;
+}
+    /* Topsection Title */
+    #body-topsectiontitle {
+        animation: body-topsectionloadup 0.6s ease-out forwards;
+        font-family: "Old Standard TT", serif;
+        font-size: 95px;
+        color: white;
+    }
+
+    /* Topsection Subtitle */
+    #body-topsectionsubtitle {
+        animation: body-topsectionloadup 0.75s ease-out forwards;
+        font-family: 'Old Standard TT', san-serif;
+        color: white;
+        font-size: 45px;
+    }
+
+    @keyframes body-topsectionloadup {
+        from {
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+/* Second section div */
+.body-secondsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
