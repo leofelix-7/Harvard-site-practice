@@ -350,8 +350,8 @@
         flex-direction: row;
         padding-bottom: 25px;
     }
-/* Second section div */
-.body-secondsection {
+/* third section div */
+.body-thirdsection {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -363,7 +363,7 @@
     padding-bottom: 90px;
 }
     /* Second section quote */
-    #body-secondsectionquote {
+    #body-thirdsectionquote {
         width: 1000px;
         font-family: "EB Garamond", serif;
         font-weight: 500;
@@ -372,7 +372,9 @@
         line-height: 1.2;
     }
 
-    #body-secondsectionquoteAuthor {
+    #body-thirdsectionquoteAuthor {
+        padding-top: 5px;
         font-family: "EB Garamond", serif;
-        font-size: 20px;
+        font-size: 25px;
+        font-weight: 500;
     }
