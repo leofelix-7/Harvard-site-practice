@@ -19,6 +19,8 @@
 :root {
     --color-defaultwhite: white;
     --color-defaultwhitetint: rgb(245, 245, 245);
+    --color-defaultblacktint: #0E0E0E;
+    --color-defaultblacklessertint: #1E1E1E;
 }
 
 /* Background Image */
@@ -30,8 +32,17 @@
     height: auto;
     z-index: -1;
     top: -250px;
-    filter: brightness(0.2);
 }
+
+    .bg-img-wrapper::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(360deg,rgba(0, 0, 0, 0.945) 0%, rgba(0, 0, 0, 0.9) 17%, rgba(0, 0, 0, 0.64) 100%);
+    }
 
 /* HEADER SECTION START */
 /* Main Header Container */
@@ -106,7 +117,7 @@
     .header-schlogo-white {
         animation: logoFadeOut linear both;
         animation-timeline: scroll(root block);
-        animation-range: 0px 80px;
+        animation-range: 0px 1px;
     }
 
     @keyframes logoFadeOut {
@@ -242,7 +253,7 @@
     padding-top: 180px;
     align-items: center;
     justify-content: center;
-    height: 820px;
+    height: 100vh;
     background-color: transparent;
 }
     /* Topsection Title */
@@ -369,7 +380,7 @@
     width: 100%;
     height: auto;
     position: relative;
-    background-color: #f3f4f4;
+    background-color: var(--color-defaultblacktint);
     border-top: 1px;
     border-color: rgb(0, 0, 0);
     border-bottom: none;
@@ -390,6 +401,7 @@
             font-weight: 400;
             font-size: 55px;
             text-align: left;
+            color: white;
         }
 
     .body-secondsectionright {
@@ -404,6 +416,7 @@
         #body-secondsectionParagraph {
             font-weight: 400;
             font-size: 18px;
+            color: white;
         }
 
     .body-secondsectionbar {
@@ -411,13 +424,13 @@
         justify-content: center;
         display: flex;
         height: 5px;
-        background-color: var(--color-defaultwhitetint);
+        background-color: var(--color-defaultblacktint);
     }
 
         #bar {
             width: 100%;
             height: 100%;
-            background-color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
             margin-left: 95px;
             margin-right: 100px;
             margin-top: 50px;
@@ -429,7 +442,7 @@
     }
         .body-secondsectionrightlearnmoreBUTTON {
             display: flex;
-            color: black;
+            color: rgb(255, 255, 255);
             align-items: center;
             font-family: 'DM Sans', san-serif;
             font-weight: 500;
@@ -446,7 +459,7 @@
         width: 235px;
         height: 2px;
         margin-left: 55px;
-        background-color: black;
+        background-color: rgb(255, 255, 255);
         transform: scaleX(0);
         transform-origin: left;
         transition: transform 0.2s ease-in-out;
@@ -455,8 +468,8 @@
 
         #arrow-right {
             border-radius: 50px;
-            background-color: rgb(0, 0, 0);
-            color: white;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
             padding: 10px;
             margin-right: 15px;
             height: 20px;
@@ -476,7 +489,7 @@
         height: 850px;
         width: auto;
         gap: 50px;
-        background-color: var(--color-defaultwhitetint);
+        background-color: var(--color-defaultblacktint);
     }
         /* grid image */
         .body-secondsectiongridCardsimg {
@@ -492,7 +505,7 @@
         .body-secondsectiongridCards {
             display: flex;
             flex-direction: column;
-            background-color: white;
+            background-color: var(--color-defaultblacklessertint);
             position: relative;
             overflow: hidden;
             cursor: pointer;
@@ -505,6 +518,7 @@
             font-size: 43px;
             padding-top: 40px;
             padding-left: 30px;
+            color: white;
         }
 
         /* paragraph */
@@ -515,13 +529,14 @@
             padding-top: 20px;
             padding-left: 30px;
             padding-right: 30px;
+            color: white;
         }
 
         /* learn more button */
         .body-secondsectiongirdlearnmoreBUTTON {
             position: absolute;
             display: flex;
-            color: black;
+            color: rgb(255, 255, 255);
             align-items: center;
             font-family: 'DM Sans', san-serif;
             font-weight: 500;
@@ -533,7 +548,7 @@
 
         #arrow-right-detinted {
             border-radius: 50px;
-            background-color: rgba(0, 0, 0, 0.664);
+            background-color: rgb(78, 78, 78);
             color: white;
             padding: 10px;
             margin-right: 15px;
@@ -560,7 +575,7 @@
             width: 260px;
             height: 2px;
             margin-left: 85px;
-            background-color: black;
+            background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.2s ease-in-out;
@@ -575,7 +590,7 @@
             width: 315px;
             height: 2px;
             margin-left: 85px;
-            background-color: black;
+            background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.2s ease-in-out;
@@ -590,7 +605,7 @@
             width: 270px;
             height: 2px;
             margin-left: 85px;
-            background-color: black;
+            background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.2s ease-in-out;
@@ -608,7 +623,8 @@
         }
 
         .body-secondsectiongridCards:hover #arrow-right-detinted {
-            background-color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            color: black;
         }
 
         .body-secondsectiongridCards:hover .body-secondsectiongridCardsimg {
@@ -623,7 +639,7 @@
             width: 145px;
             height: 2px;
             margin-left: 30px;
-            background-color: black;
+            background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.2s ease-in-out;
@@ -637,7 +653,7 @@
             width: 255px;
             height: 2px;
             margin-left: 30px;
-            background-color: black;
+            background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.2s ease-in-out;
@@ -651,7 +667,7 @@
             width: 158px;
             height: 2px;
             margin-left: 30px;
-            background-color: black;
+            background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
             transition: transform 0.2s ease-in-out;
