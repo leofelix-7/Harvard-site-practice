@@ -29,7 +29,7 @@
     height: auto;
     z-index: -1;
     top: -250px;
-    filter: brightness(0.35);
+    filter: brightness(0.2);
 }
 
 /* HEADER SECTION START */
@@ -236,19 +236,18 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding-top: 88px;
-    align-items: left;
-    justify-content: left;
-    height: 620px;
+    padding-top: 180px;
+    align-items: center;
+    justify-content: center;
+    height: 820px;
     background-color: transparent;
-    padding-left: 100px;
 }
     /* Topsection Title */
     #body-topsectiontitle {
         animation: body-topsectionloadup 0.6s ease-out forwards;
         font-family: Georgia, serif;
         font-weight: 400;
-        font-size: 84px;
+        font-size: 120px;
         color: white;
         flex-shrink: 0;
         padding-top: 75px;
@@ -257,13 +256,13 @@
     /* Topsection Subtitle */
     #body-topsectionsubtitle {
         animation: body-topsectionloadup 0.75s ease-out forwards;
-        font-family: Georgia, serif;
         color: white;
-        font-size: 30px;
+        font-size: 18px;
         flex-shrink: 0;
         font-weight: 350;
         width: 600px;
-        padding-top: 10px;
+        text-align: center;
+        margin-top: 20px;
     }
 
     /* Buttons */
@@ -271,7 +270,7 @@
         background-color: transparent;
         border-width: 1px;
         border-style: solid;
-        height: 70px;
+        height: auto;
         padding-left: 30px;
         padding-right: 30px;
         align-items: center;
@@ -285,6 +284,7 @@
         transition: color 0.3s ease-in-out;
         font-weight: 500;
         animation: body-topsectionloadup 0.75s ease-out forwards;
+        margin-bottom: 220px;
     }
 
     .body-topsectionButtondivBUTTON::before {
@@ -299,7 +299,6 @@
         transform: scaleY(0);
         transform-origin: top;
         transition: transform 0.2s ease-in-out;
-        gap: 20px;
     }
 
     .body-topsectionButtondivBUTTON:hover::before {
@@ -386,20 +385,23 @@
         padding-top: 50px;
     }
         #body-secondsectionTitle {
-            font-family: 'EB Garamond', serif;
-            font-weight: 600;
+            font-family: 'Georgia', serif;
+            font-weight: 400;
             font-size: 55px;
             text-align: left;
         }
 
     .body-secondsectionright {
-        height: 100px;
+        height: auto;
         width: 100%;
         padding-right: 100px;
         padding-top: 50px;
         justify-content: flex-end;
         display: flex;
+        flex-direction: column;
     }
         #body-secondsectionParagraph {
             padding-top: 20px;
+            font-weight: 400;
+            font-size: 20px;
         }
