@@ -419,23 +419,6 @@
             color: white;
         }
 
-    .body-secondsectionbar {
-        width: 100%;
-        justify-content: center;
-        display: flex;
-        height: 5px;
-        background-color: var(--color-defaultblacktint);
-    }
-
-        #bar {
-            width: 100%;
-            height: 100%;
-            background-color: rgb(255, 255, 255);
-            margin-left: 95px;
-            margin-right: 100px;
-            margin-top: 50px;
-        }
-
     .body-secondsectionrightlearnmore {
         display: flex;
         justify-content: flex-start;
