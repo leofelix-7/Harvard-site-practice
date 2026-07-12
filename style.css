@@ -651,36 +651,21 @@
     position: relative;
     font-weight: 400;
     font-size: 17px;
-    color: rgba(255, 255, 255, 0.685);
+    color: rgba(255, 255, 255, 0.623);
     margin-top: 10px;
-    overflow: hidden;
-    transition: 0.25s;
-}
-
-.footer-linksdivItems:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.footer-linksdivItems:not(:hover)::after {
-    transform-origin: right;
+    transition: 0.2s;
+    border-bottom: 1px;
+    border-color: transparent;
+    border-style: solid;
+    border-right: 0px;
+    border-left: 0px;
+    border-top: 0px;
+    padding-bottom: 2px;
 }
 
 .footer-linksdivItems:hover {
     color: white;
-}
-
-.footer-linksdivItems::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 1px;
-    background-color: rgb(255, 255, 255);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.2s ease-in-out;
+    border-color: white;
 }
 
 .footer-branding {
