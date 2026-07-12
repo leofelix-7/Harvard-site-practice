@@ -21,6 +21,9 @@
     --color-defaultwhitetint: rgb(245, 245, 245);
     --color-defaultblacktint: #0E0E0E;
     --color-defaultblacklessertint: #1E1E1E;
+    --time-barhovertime: 0.2s;
+    --time-linkhovertime: 0.3s;
+    --grid-margin: 7%;
 }
 
 /* Background Image */
@@ -282,8 +285,9 @@
         margin-top: 20px;
     }
 
-    #learnmore {
-        background-color: transparent;
+    #topsectionlearnmore {
+        animation: body-topsectionloadup 0.8s ease-out forwards;
+        padding-top: 20px;
     }
 
     @keyframes body-topsectionloadup {
@@ -332,20 +336,16 @@
     height: auto;
     position: relative;
     background-color: var(--color-defaultblacktint);
-    border-top: 1px;
-    border-color: rgb(0, 0, 0);
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
     display: flex;
     flex-direction: row;
+    padding: var(--grid-margin);
     padding-top: 50px;
+    padding-bottom: 0px;
 }
     .body-secondsectionleft {
         height: auto;
-        padding: 25px;
+        padding-top: 25px;
         width: 100%;
-        padding-left: 100px;
     }
         #body-secondsectionTitle {
             font-family: 'Georgia', serif;
@@ -358,7 +358,6 @@
     .body-secondsectionright {
         padding-top: 35px;
         width: 100%;
-        padding-right: 100px;
         justify-content: flex-end;
         display: flex;
         flex-direction: column;
@@ -374,7 +373,7 @@
         display: flex;
         justify-content: flex-start;
     }
-        .body-secondsectionrightlearnmoreBUTTON {
+        .element-linkhoverline {
             display: flex;
             color: rgb(255, 255, 255);
             align-items: center;
@@ -383,21 +382,23 @@
             font-size: 19px;
             position: relative;
             width: fit-content;
+            cursor: pointer;
+            overflow: hidden;
         }
 
-        .body-secondsectionrightlearnmoreBUTTON::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 235px;
-        height: 2px;
-        margin-left: 55px;
-        background-color: rgb(255, 255, 255);
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.2s ease-in-out;
-        bottom: 7px;
+        .element-linkhoverline::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            margin-left: 55px;
+            background-color: rgb(255, 255, 255);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--time-linkhovertime);
+            bottom: 7px;
         }
 
         #arrow-right {
@@ -410,14 +411,15 @@
             width: 20px;
         }
 
-        .body-secondsectionrightlearnmoreBUTTON:hover::after {
+        .element-linkhoverline:hover::after {
             transform: scaleX(1);
             transform-origin: left;
         }
 
     /* GRIDS */
     .body-secondsectiongrids {
-        padding: 100px;
+        padding: var(--grid-margin);
+        padding-top: 70px;
         display: flex;
         flex-direction: row;
         height: 850px;
@@ -430,7 +432,7 @@
             width: 100%;
             height: auto;
             object-fit: cover;
-            transition: transform 0.23s ease-in-out;
+            transition: transform var(--time-barhovertime);
             object-fit: cover;
             transform-origin: bottom;
         }
@@ -477,7 +479,7 @@
             font-size: 19px;
             width: fit-content;
             padding-left: 30px;
-            top: 580px;
+            top: 575px;
         }
 
         #arrow-right-detinted {
@@ -512,7 +514,7 @@
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.2s ease-in-out;
+            transition: transform var(--time-barhovertime);
             bottom: 7px;
         } 
 
@@ -527,7 +529,7 @@
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.2s ease-in-out;
+            transition: transform var(--time-barhovertime);
             bottom: 7px;
         } 
 
@@ -542,7 +544,7 @@
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.2s ease-in-out;
+            transition: transform var(--time-barhovertime);
             bottom: 7px;
         }
 
@@ -576,7 +578,7 @@
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.2s ease-in-out;
+            transition: transform var(--time-barhovertime);
         }
 
         #commitment-title::after {
@@ -590,7 +592,7 @@
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.2s ease-in-out;
+            transition: transform var(--time-barhovertime);
         }
 
         #campus-title::after {
@@ -604,7 +606,7 @@
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
-            transition: transform 0.2s ease-in-out;
+            transition: transform var(--time-barhovertime);
         }
 
 /* SECOND SECTION & BODY END */
@@ -641,25 +643,39 @@
     font-size: 20px;
     color: white;
     margin-bottom: 10px;
+    
 }
 
 .footer-linksdivItems {
     font-family: 'DM Sans', san-serif;
+    position: relative;
     font-weight: 400;
     font-size: 17px;
     color: rgba(255, 255, 255, 0.685);
     margin-top: 10px;
-    transition: 0.15s;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: transparent;
+    overflow: hidden;
+}
+
+.footer-linksdivItems:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 .footer-linksdivItems:hover {
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(255, 255, 255);
     color: white;
+}
+
+.footer-linksdivItems::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 158px;
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease-in-out;
 }
 
 .footer-branding {
@@ -670,4 +686,5 @@
     width: auto;
     height: 150px;
     margin-top: 75px;
+    transition: transform 0.25s;
 }
