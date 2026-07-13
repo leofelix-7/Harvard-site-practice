@@ -10,6 +10,21 @@
     font-family: "DM Sans", san-serif;
 }
 
+/* FONT - CANELA IMPLEMENTATION */
+/* Canela Family */
+@font-face {
+    font-family: 'Canela';
+    src: url('Contents/fonts/Canela/Canela-Regular-Trial.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT-America-Standard';
+    src: url('Contents/fonts/GT America Standard/GT-America-Standard-Regular-Trial.otf') format('opentype');
+    fontweight: 400;
+    font-style: normal;
+}
+
 ::selection {
     background-color: rgba(0, 0, 0, 0.788);
     color: rgb(255, 255, 255);
@@ -21,8 +36,8 @@
     --color-defaultwhitetint: rgb(245, 245, 245);
     --color-defaultblacktint: #0E0E0E;
     --color-defaultblacklessertint: #1E1E1E;
-    --time-barhovertime: 0.2s;
-    --time-linkhovertime: 0.3s;
+    --time-barhovertime: 0.25s ease-out;
+    --time-linkhovertime: 0.33s ease-out;
     --grid-margin: 7%;
 }
 
@@ -32,7 +47,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    min-height: 100vh;
     z-index: -1;
     top: -250px;
 }
@@ -158,7 +173,7 @@
     overflow: hidden;
     z-index: 1;
     display: flex;
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-out;
     align-items: center;
     flex-shrink: 0;
 
@@ -189,7 +204,7 @@
         z-index: -1;
         transform: scaleY(0);
         transform-origin: top;
-        transition: transform 0.2s ease-in-out;
+        transition: transform 0.2s ease-out;
     }
 
     .header-subpagebuttons:hover::before {
@@ -216,7 +231,7 @@
         color: rgb(139, 43, 43);
         margin-right: 15px;
         margin-left: 10px;
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-out;
         animation: headerSubpageNewsDotSolidify linear both;
         animation-timeline: scroll(root block);
         animation-range: 0px 1px;
@@ -228,7 +243,7 @@
         font-weight: 400;
         font-size: 17px;
         color: white;
-        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-out;
         animation: headerSubpageNewsTextSolidify linear both;
         animation-timeline: scroll(root block);
         animation-range: 0px 1px;
@@ -266,7 +281,7 @@
     /* Topsection Title */
     #body-topsectiontitle {
         animation: body-topsectionloadup 0.6s ease-out forwards;
-        font-family: Georgia, serif;
+        font-family: Canela, serif;
         font-weight: 400;
         font-size: 120px;
         color: white;
@@ -348,7 +363,7 @@
         width: 100%;
     }
         #body-secondsectionTitle {
-            font-family: 'Georgia', serif;
+            font-family: 'Canela', serif;
             font-weight: 400;
             font-size: 55px;
             text-align: left;
@@ -377,7 +392,7 @@
             display: flex;
             color: rgb(255, 255, 255);
             align-items: center;
-            font-family: 'DM Sans', san-serif;
+            font-family: 'GT-America-Standard', san-serif;
             font-weight: 500;
             font-size: 19px;
             position: relative;
@@ -393,7 +408,7 @@
             bottom: -2px;
             width: 100%;
             height: 2px;
-            margin-left: 55px;
+            margin-left: 57px;
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
@@ -407,8 +422,8 @@
             color: rgb(0, 0, 0);
             padding: 10px;
             margin-right: 15px;
-            height: 20px;
-            width: 20px;
+            height: 42px;
+            width: 42px;
         }
 
         .element-linkhoverline:hover::after {
@@ -435,6 +450,7 @@
             transition: transform var(--time-barhovertime);
             object-fit: cover;
             transform-origin: bottom;
+            box-sizing: border-box;
         }
 
         /* grid */
@@ -449,17 +465,22 @@
 
         /* title */
         .body-secondsectiongridCardstitle {
-            font-family: 'Georgia', serif;
-            font-weight: 400;
-            font-size: 43px;
+            font-family: 'Canela', serif;
+            font-weight: 450;
+            font-size: 35px;
             padding-top: 40px;
+            line-height: 30px;
             padding-left: 30px;
             color: white;
+            display: inline-block;
+            width: fit-content;
+            max-width: calc(100% - 30px);
+            overflow: visible;
         }
 
         /* paragraph */
         .body-secondsectiongridCardsparagraph {
-            font-family: 'DM Sans', san-serif;
+            font-family: 'GT-America-Standard', san-serif;
             font-weight: 400;
             font-size: 18px;
             padding-top: 20px;
@@ -474,10 +495,9 @@
             display: flex;
             color: rgb(255, 255, 255);
             align-items: center;
-            font-family: 'DM Sans', san-serif;
+            font-family: 'GT-America-Standard', san-serif;
             font-weight: 500;
             font-size: 19px;
-            width: fit-content;
             padding-left: 30px;
             top: 575px;
         }
@@ -487,10 +507,10 @@
             background-color: rgb(78, 78, 78);
             color: white;
             padding: 10px;
-            margin-right: 15px;
-            height: 20px;
-            width: 20px;
-            transition: 0.2s ease-in-out;
+            margin-right: 20px;
+            height: 42px;
+            width: 42px;
+            transition: 0.2s ease-out;
         }
 
 
@@ -510,7 +530,7 @@
             bottom: -2px;
             width: 260px;
             height: 2px;
-            margin-left: 85px;
+            margin-left: 91px;
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
@@ -519,13 +539,13 @@
         } 
 
         #commitment::after{
-            content: "";
+            content: ""; 
             position: absolute;
             left: 0;
             bottom: -2px;
             width: 315px;
             height: 2px;
-            margin-left: 85px;
+            margin-left: 91px;
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
@@ -540,7 +560,7 @@
             bottom: -2px;
             width: 270px;
             height: 2px;
-            margin-left: 85px;
+            margin-left: 91px;
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
@@ -567,42 +587,15 @@
             transform: scale(1.1);
         }
 
-        #history-title::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 145px;
-            height: 2px;
-            margin-left: 30px;
-            background-color: rgb(255, 255, 255);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--time-barhovertime);
-        }
-
-        #commitment-title::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 255px;
-            height: 2px;
-            margin-left: 30px;
-            background-color: rgb(255, 255, 255);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform var(--time-barhovertime);
-        }
-
+        #history-title::after,
+        #commitment-title::after,
         #campus-title::after {
             content: "";
             position: absolute;
-            left: 0;
-            bottom: -2px;
-            width: 158px;
+            left: 30px;
+            bottom: -4px;
+            width: calc(100% - 30px);
             height: 2px;
-            margin-left: 30px;
             background-color: rgb(255, 255, 255);
             transform: scaleX(0);
             transform-origin: left;
@@ -638,7 +631,7 @@
 }
 
 .footer-linksdivTitle {
-    font-family: 'DM Sans', san-serif;
+    font-family: 'GT-America-Standard', san-serif;
     font-weight: 500;
     font-size: 20px;
     color: white;
@@ -647,7 +640,7 @@
 }
 
 .footer-linksdivItems {
-    font-family: 'DM Sans', san-serif;
+    font-family: 'GT-America-Standard', san-serif;
     position: relative;
     font-weight: 400;
     font-size: 17px;
